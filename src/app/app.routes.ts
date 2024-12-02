@@ -9,7 +9,7 @@ export const routes: Routes = [
         component: NoTaskComponent
     },
     {
-        path: 'task', // <your-domain>/tasks
-        component: TaskComponent
+        path: 'tasks', // <your-domain>/tasks
+        component: TaskComponent 
     }
 ]
