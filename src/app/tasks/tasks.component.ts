@@ -1,7 +1,7 @@
 import { Component, computed, inject, input } from '@angular/core';
 
 import { TaskComponent } from './task/task.component';
-import { Task } from './task/task.model';
+
 import { TasksService } from './tasks.service';
 import { RouterLink } from '@angular/router';
 
@@ -14,6 +14,7 @@ import { RouterLink } from '@angular/router';
 })
 export class TasksComponent {
   userId = input.required<string>();
+  order = input<'asc' | 'desc'>();
   private tasksService = inject(TasksService)
     userTasks = computed(() => this.tasksService.allTasks().filter(task => task.userId === this.userId())
   );
