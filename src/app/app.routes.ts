@@ -1,8 +1,7 @@
 import { Routes } from '@angular/router';
 import { NoTaskComponent } from './tasks/no-task/no-task.component';
 import { UserTasksComponent } from './users/user-tasks/user-tasks.component';
-import { NewTaskComponent } from './tasks/new-task/new-task.component';
-import { TasksComponent } from './tasks/tasks.component';
+import { routes as userRoutes } from './users/users.routes'
 import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
@@ -13,22 +12,7 @@ export const routes: Routes = [
     {
         path: 'users/:userId', // <your-domain>/users/<uid>
         component: UserTasksComponent,
-        children:[
-            {
-                path: '', // <your-domain>/users/<uid>/tasks
-                redirectTo: 'tasks',
-                pathMatch: 'full'
-            },
-            {
-                path: 'tasks', // <your-domain>/users/<uid>/tasks
-                component: TasksComponent
-            },
-            {
-                path: 'tasks/new', // <your-domain>/users/<uid>/tasks/new
-                component: NewTaskComponent
-            },
-
-        ] 
+        children: userRoutes
     },{
         path: '**',
         component: NotFoundComponent
