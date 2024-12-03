@@ -15,11 +15,11 @@ export const routes: Routes = [
         component: UserTasksComponent,
         children:[
             {
-                path: 'tasts', // <your-domain>/users/<uid>/tasks
+                path: 'tasks', // <your-domain>/users/<uid>/tasks
                 component: TaskComponent
             },
             {
-                path: 'tasts/new', // <your-domain>/users/<uid>/tasks/new
+                path: 'tasks/new', // <your-domain>/users/<uid>/tasks/new
                 component: NewTaskComponent
             },
 
