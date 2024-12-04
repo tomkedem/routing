@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 import { TasksComponent } from "../tasks/tasks.component";
-import { NewTaskComponent } from "../tasks/new-task/new-task.component";
+import { canLaveEditPage, NewTaskComponent } from "../tasks/new-task/new-task.component";
 import { resloveUserName } from "./user-tasks/user-tasks.component";
 
 export const routes: Routes = [
@@ -19,7 +19,8 @@ export const routes: Routes = [
     },
     {
         path: 'tasks/new', // <your-domain>/users/<uid>/tasks/new
-        component: NewTaskComponent
+        component: NewTaskComponent,
+        canDeactivate: [canLaveEditPage] 
     },
 
 ] 
